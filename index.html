@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Lab - Functions</title>
+</head>
+<body>
+
+    <h1>Functions in JavaScript</h1>
+    
+    <!-- Input for the user -->
+    <input type="number" id="number" placeholder="Enter a number">
+    <button onclick="showResult()">Show Square</button>
+    
+    <p id="result"></p>
+    
+    <script>
+        // Function to calculate the square of a number
+        function calculateSquare(num) {
+            return num * num;
+        }
+        
+        // Function to get the number and display the result
+        function showResult() {
+            // Get the number from the input
+            let number = document.getElementById("number").value;
+            
+            // Check if the number is valid
+            if (number === "") {
+                alert("Please enter a number");
+            } else {
+                // Calculate the square using the calculateSquare function
+                let result = calculateSquare(Number(number));
+                
+                // Display the result on the page
+                document.getElementById("result").innerText = "The square of " + number + " is " + result;
+            }
+        }
+    </script>
+    
+</body>
+</html>

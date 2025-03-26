@@ -11,7 +11,7 @@
     
     <!-- Input for the user -->
     <input type="number" id="number" placeholder="Enter a number">
-    <button onclick="showResult()">Show Square</button>
+    <button onclick="showResult()">Show Results</button>
     
     <p id="result"></p>
     
@@ -20,8 +20,22 @@
         function calculateSquare(num) {
             return num * num;
         }
+
+        // Function to calculate the double of a number
+        function calculateDouble(num) {
+            return num * 2;
+        }
+
+        // Function to check if the number is even or odd
+        function checkEvenOdd(num) {
+            if (num % 2 === 0) {
+                return num + " is even.";
+            } else {
+                return num + " is odd.";
+            }
+        }
         
-        // Function to get the number and display the result
+        // Function to get the number and display the results
         function showResult() {
             // Get the number from the input
             let number = document.getElementById("number").value;
@@ -30,11 +44,16 @@
             if (number === "") {
                 alert("Please enter a number");
             } else {
-                // Calculate the square using the calculateSquare function
-                let result = calculateSquare(Number(number));
+                // Calculate the square, double, and check even/odd
+                let square = calculateSquare(Number(number));
+                let double = calculateDouble(Number(number));
+                let evenOdd = checkEvenOdd(Number(number));
                 
-                // Display the result on the page
-                document.getElementById("result").innerText = "The square of " + number + " is " + result;
+                // Display the results on the page
+                document.getElementById("result").innerHTML = 
+                    "The square of " + number + " is " + square + "<br>" +
+                    "The double of " + number + " is " + double + "<br>" +
+                    evenOdd;
             }
         }
     </script>
